@@ -7,7 +7,7 @@ public class FactsAboutCats {
 
     private final Date updatedAt;
     private final Date createdAt;
-    private final String _id;
+    private final String id;
     private final String user;
     private final String text;
     private final boolean used;
@@ -16,14 +16,14 @@ public class FactsAboutCats {
 
             @JsonProperty("updatedAt") Date updatedAt,
             @JsonProperty("createdAt") Date createdAt,
-            @JsonProperty("_id")String _id,
+            @JsonProperty("_id")String id,
             @JsonProperty("user")String user,
             @JsonProperty("used") boolean used,
             @JsonProperty("text")String text) {
 
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
-        this._id = _id;
+        this.id = id;
         this.user = user;
         this.used = used;
         this.text = text;
@@ -38,7 +38,7 @@ public class FactsAboutCats {
     }
 
     public String get_id() {
-        return _id;
+        return id;
     }
 
     public String getUser() {
@@ -58,7 +58,7 @@ public class FactsAboutCats {
         return "Fact about cats:\n" +
                 "  Created: " + formatForDateNow.format(createdAt) + "\n" +
                 "  Updated: " + formatForDateNow.format(updatedAt) + "\n" +
-                "  User id: " + _id + "\n" +
+                "  User id: " + id + "\n" +
                 "  User: " + user + "\n" +
                 "  Fact: '" + text + "'\n";
     }

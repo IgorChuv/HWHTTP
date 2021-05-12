@@ -29,7 +29,7 @@ public class Main {
         request.setHeader(HttpHeaders.ACCEPT, ContentType.APPLICATION_JSON.getMimeType());
         CloseableHttpResponse response = httpClient.execute(request);
 
-        List<FactsAboutCats> factAboutCats = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
+        List<FactsAboutCats> factAboutCats = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<FactsAboutCats>>() {});
         //factAboutCats.forEach(System.out::println);
         factAboutCats.forEach(factsAboutCatsList::add);
 
